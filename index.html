@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Video Player</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { background: #1a1a2e; color: white; font-family: Arial; padding: 20px; }
+        input { width: 100%; padding: 15px; border-radius: 10px; border: none; margin-bottom: 10px; font-size: 16px; }
+        button { width: 100%; padding: 15px; background: #4CAF50; color: white; border: none; border-radius: 10px; font-size: 18px; margin-bottom: 20px; }
+        video { width: 100%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+    <h2>🎬 My Video Player</h2>
+    <input type="text" id="linkInput" placeholder="Paste video link here...">
+    <button onclick="playVideo()">▶ Play Video</button>
+    <video id="videoPlayer" controls></video>
+
+    <script>
+        function playVideo() {
+            const link = document.getElementById('linkInput').value;
+            const video = document.getElementById('videoPlayer');
+            
+            if (link) {
+                video.src = link;
+                video.play();
+            } else {
+                alert("Link daal pehle!");
+            }
+        }
+    </script>
+</body>
+</html>
